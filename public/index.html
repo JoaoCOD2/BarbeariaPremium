@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BarberShop — Agendamento Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <!-- HEADER -->
+  <header class="header" id="top">
+    <div class="header-inner">
+      <div class="logo">
+        <svg class="logo-scissors" viewBox="0 0 40 40" fill="none">
+          <circle cx="10" cy="10" r="5" stroke="#c9a84c" stroke-width="1.5"/>
+          <circle cx="10" cy="30" r="5" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="14" y1="14" x2="34" y2="34" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="14" y1="26" x2="34" y2="6" stroke="#c9a84c" stroke-width="1.5"/>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-name">BarberShop</span>
+          <span class="logo-tagline">Est. 2026 · Tradição &amp; Estilo</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#profissionais">Profissionais</a>
+        <a href="#agendar" class="nav-cta">Agendar Agora</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#profissionais" id="mobileNavProfissionais">Profissionais</a>
+      <a href="#agendar" id="mobileNavAgendar">Agendar</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">✦ Agendamento Online ✦</span>
+      <h1 class="hero-title">A Arte do<br/><em>Corte Perfeito</em></h1>
+      <p class="hero-sub">Escolha seu profissional, horário e garanta seu lugar.<br/>Rápido, simples e sem filas.</p>
+      <a href="#agendar" class="btn-gold">Agendar Meu Horário</a>
+    </div>
+    <div class="hero-deco">
+      <div class="deco-circle c1"></div>
+      <div class="deco-circle c2"></div>
+    </div>
+  </section>
+
+  <!-- PROFISSIONAIS -->
+  <section class="section" id="profissionais">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Nossa Equipe</span>
+        <h2 class="section-title">Profissionais</h2>
+      </div>
+      <div class="barbers-grid" id="barbersGrid"></div>
+    </div>
+  </section>
+
+  <!-- AGENDAMENTO -->
+  <section class="section section-dark" id="agendar">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Reserve seu horário</span>
+        <h2 class="section-title">Agendamento</h2>
+      </div>
+
+      <!-- STEPS -->
+      <div class="steps">
+        <div class="step active" data-step="1"><div class="step-num">1</div><span>Profissional</span></div>
+        <div class="step-line"></div>
+        <div class="step" data-step="2"><div class="step-num">2</div><span>Data &amp; Hora</span></div>
+        <div class="step-line"></div>
+        <div class="step" data-step="3"><div class="step-num">3</div><span>Seus Dados</span></div>
+        <div class="step-line"></div>
+        <div class="step" data-step="4"><div class="step-num">4</div><span>Confirmar</span></div>
+      </div>
+
+      <div class="form-card">
+
+        <!-- STEP 1 -->
+        <div class="form-step active" id="step1">
+          <h3 class="step-title">Escolha o Profissional</h3>
+          <div class="barber-select-grid" id="barberSelectGrid"></div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step" id="step2">
+          <h3 class="step-title">Escolha a Data e Horário</h3>
+          <div class="datetime-layout">
+            <div class="calendar-wrap">
+              <div class="cal-header">
+                <button class="cal-nav" id="prevMonth">&#8592;</button>
+                <span class="cal-month-label" id="calMonthLabel"></span>
+                <button class="cal-nav" id="nextMonth">&#8594;</button>
+              </div>
+              <div class="cal-weekdays">
+                <span>Dom</span><span>Seg</span><span>Ter</span>
+                <span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+              </div>
+              <div class="cal-grid" id="calGrid"></div>
+            </div>
+            <div class="time-wrap">
+              <h4 class="time-label">Horários Disponíveis</h4>
+              <div class="time-grid" id="timeGrid">
+                <p class="time-placeholder">Selecione uma data primeiro</p>
+              </div>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-outline" id="backToStep1Btn">← Voltar</button>
+            <button class="btn-gold" id="toStep3Btn" disabled>Próximo →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="form-step" id="step3">
+          <h3 class="step-title">Seus Dados</h3>
+          <div class="field-group">
+            <label class="field-label">Nome Completo *</label>
+            <input class="field-input" type="text" id="clientName" placeholder="Ex: João da Silva" />
+          </div>
+          <div class="field-group">
+            <label class="field-label">CPF ou Telefone *</label>
+            <input class="field-input" type="text" id="clientId" placeholder="Ex: 000.000.000-00 ou (51) 99999-9999" />
+          </div>
+          <div class="step-nav">
+            <button class="btn-outline" id="backToStep2Btn">← Voltar</button>
+            <button class="btn-gold" id="toStep4Btn">Próximo →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="form-step" id="step4">
+          <h3 class="step-title">Confirmar Agendamento</h3>
+          <div class="confirm-card">
+            <div class="confirm-row"><span class="confirm-label">✦ Profissional</span><span class="confirm-value" id="confirmBarber">—</span></div>
+            <div class="confirm-row"><span class="confirm-label">✦ Data</span><span class="confirm-value" id="confirmDate">—</span></div>
+            <div class="confirm-row"><span class="confirm-label">✦ Horário</span><span class="confirm-value" id="confirmTime">—</span></div>
+            <div class="confirm-row"><span class="confirm-label">✦ Cliente</span><span class="confirm-value" id="confirmName">—</span></div>
+            <div class="confirm-row"><span class="confirm-label">✦ Identificação</span><span class="confirm-value" id="confirmIdDoc">—</span></div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-outline" id="backToStep3Btn">← Voltar</button>
+            <button class="btn-gold" id="confirmBtn">Confirmar e Agendar ✓</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL SUCESSO -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-icon">✓</div>
+      <h3 class="modal-title">Agendado com Sucesso!</h3>
+      <p class="modal-text" id="modalText"></p>
+      <p class="modal-note">O barbeiro foi notificado via WhatsApp. Até lá! ✦</p>
+      <button class="btn-gold" id="closeModalBtn">Fechar</button>
+    </div>
+  </div>
+
+  <!-- MODAL ERRO -->
+  <div class="modal-overlay" id="modalError">
+    <div class="modal">
+      <div class="modal-icon err">✕</div>
+      <h3 class="modal-title">Horário Indisponível</h3>
+      <p class="modal-text">Este horário já foi reservado por outro cliente.<br/>Por favor, escolha outro horário.</p>
+      <button class="btn-gold" id="closeErrorModalBtn">Escolher outro horário</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="logo">
+        <svg class="logo-scissors" viewBox="0 0 40 40" fill="none">
+          <circle cx="10" cy="10" r="5" stroke="#c9a84c" stroke-width="1.5"/>
+          <circle cx="10" cy="30" r="5" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="14" y1="14" x2="34" y2="34" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="14" y1="26" x2="34" y2="6" stroke="#c9a84c" stroke-width="1.5"/>
+        </svg>
+        <span class="logo-name">BarberShop</span>
+      </div>
+      <p class="footer-copy">© 2026 BarberShop · Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- FIREBASE SDK (module) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      getDocs,
+      query,
+      where
+    } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDQ5_od5RhMd-2jky2dyC7ieCFuzGNi_Yg",
+      authDomain: "barbearia-premium-78b71.firebaseapp.com",
+      projectId: "barbearia-premium-78b71",
+      storageBucket: "barbearia-premium-78b71.firebasestorage.app",
+      messagingSenderId: "684167459731",
+      appId: "1:684167459731:web:1051faf5f4e30de2efee66"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    window._db         = db;
+    window._collection = collection;
+    window._addDoc     = addDoc;
+    window._getDocs    = getDocs;
+    window._query      = query;
+    window._where      = where;
+
+    window.dispatchEvent(new Event("firebaseReady"));
+  </script>
+
+  <script src="script.js?v=4"></script>
+</body>
+</html>
