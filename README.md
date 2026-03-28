@@ -2,6 +2,8 @@
 
 ## Sistema de agendamento online para uma barbearia, com interface moderna, interação em tempo real e confirmação de horários via WhatsApp.
 
+<br/>
+
 ## O projeto foi desenvolvido com foco em experiência do usuário, organização dos agendamentos e integração com banco de dados em nuvem.
 
 ## ✨ Funcionalidades:
