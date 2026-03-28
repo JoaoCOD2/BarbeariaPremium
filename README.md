@@ -11,20 +11,20 @@
 <br/>
 
 ## ✨ Funcionalidades:
-📅 Agendamento de horários
-💬 Confirmação automática pelo WhatsApp
-🎨 Interface interativa e responsiva
-☁️ Integração com Firebase
-💾 Armazenamento de dados em banco de dados
-🚀 Deploy online
+📅 Agendamento de horários <br/>
+💬 Confirmação automática pelo WhatsApp <br/>
+🎨 Interface interativa e responsiva <br/>
+☁️ Integração com Firebase <br/>
+💾 Armazenamento de dados em banco de dados <br/> 
+🚀 Deploy online <br/> 
 
 <br/>
 
 ## 🛠️ Tecnologias utilizadas
-HTML5
-CSS3
-JavaScript
-Firebase
+HTML5 <br/>
+CSS3 <br/>
+JavaScript <br/>
+Firebase <br/>
 
 <br/>
 
