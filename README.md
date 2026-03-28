@@ -20,7 +20,7 @@
 
 <br/>
 
-##🛠️ Tecnologias utilizadas
+## 🛠️ Tecnologias utilizadas
 HTML5
 CSS3
 JavaScript
@@ -28,5 +28,5 @@ Firebase
 
 <br/>
 
-##🎯 Objetivo do projeto
+## 🎯 Objetivo do projeto
 Este projeto foi desenvolvido para praticar conceitos de desenvolvimento web front-end e integração com serviços em nuvem, simulando um sistema real de agendamento para barbearias.
